@@ -1,193 +1,244 @@
-# Vue3 Movie app
+# Vue3 영화 검색 앱
 
-Vue3와 OMDb API를 사용하는 영화 검색 애플리케이션입니다.<br>
-[vue3-webpack-template#vue-router](https://github.com/ParkYoungWoong/vue3-webpack-template)에서 프로젝트를 시작합니다.
+Vue 3와 OMDb API로 만든 현대적인 영화 검색 애플리케이션입니다. 영화, TV 시리즈, 에피소드를 아름답고 반응형 인터페이스로 검색할 수 있습니다.
 
-[Nuxt](https://nuxtjs.org/docs/2.x/get-started/installation) 프로젝트로 이관할 용도의 [Vue2 Movie App](https://github.com/ParkYoungWoong/vue2-movie-app) 프로젝트도 확인하세요!
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://app.netlify.com/sites/stupefied-hodgkin-d9d350/deploys)
 
-[DEMO](https://stupefied-hodgkin-d9d350.netlify.app/)
+## 데모
 
-## 🌿 Branches
+[라이브 데모](https://stupefied-hodgkin-d9d350.netlify.app/)
 
-진행 순서에 맞는 브랜치를 확인하세요.
+## 주요 기능
 
-- [Master](https://github.com/ParkYoungWoong/vue3-movie-app)
-- [Default](https://github.com/ParkYoungWoong/vue3-movie-app/tree/default)
-- [Netlify CLI](https://github.com/ParkYoungWoong/vue3-movie-app/tree/netlify-cli)
-- [Unit Test](https://github.com/ParkYoungWoong/vue3-movie-app/tree/unit-test)
-- [E2E Test](https://github.com/ParkYoungWoong/vue3-movie-app/tree/e2e-test)
+- **영화 검색** - 제목, 타입(영화/시리즈/에피소드), 연도별로 검색
+- **상세 정보** - 평점, 줄거리, 출연진 등 영화의 종합적인 정보 확인
+- **반응형 디자인** - 데스크톱과 모바일 환경 모두 최적화
+- **점진적 이미지 로딩** - 스켈레톤 로더를 활용한 부드러운 이미지 로딩
+- **보안 API 연동** - 서버리스 함수를 통한 API 키 보호
+- **현대적인 아키텍처** - Vue 3, Vuex 4, Vue Router 4 기반
 
-## 📖 Docs
+## 기술 스택
 
-- [Vue3](https://v3.ko.vuejs.org/guide/introduction.html)
-- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-- [Vuex](https://next.vuex.vuejs.org/)
-- [Vue Router](https://next.router.vuejs.org/installation.html)
-- [Netlify](https://docs.netlify.com/)
-- [Jest](https://jestjs.io/docs/getting-started)
-- [Vue test utils](https://next.vue-test-utils.vuejs.org/guide/)
-- [Cypress](https://docs.cypress.io/guides/overview/why-cypress)
+### 프론트엔드
+- **Vue 3** - 프로그레시브 JavaScript 프레임워크
+- **Vue Router 4** - Vue.js 공식 라우터
+- **Vuex 4** - 모듈형 아키텍처 기반 상태 관리
+- **Bootstrap 5** - 반응형 디자인을 위한 UI 프레임워크
+- **SCSS** - 유지보수 가능한 스타일을 위한 CSS 전처리기
 
-## 🎯 Goals
+### 빌드 및 개발 도구
+- **Webpack 5** - 모듈 번들러
+- **Babel** - JavaScript 트랜스파일러
+- **ESLint** - 코드 린팅
+- **PostCSS** - autoprefixer를 포함한 CSS 처리
 
-- Vuex(Store)로 중앙 집중식 데이터를 처리하고 네임스페이스를 관리할 수 있습니다.
-- SPA(Single Page Application)를 위한 Vue Router를 구성해 Hash 기반의 페이지 단위로 개발할 수 있습니다.
-- OMDb API를 활용해 실제 영화 정보를 검색하고 출력할 수 있습니다.
-- Vue 플러그인을 생성하고 적용할 수 있습니다.
-- API Key가 노출되지 않도록 Netlify Functions(서버리스 함수)와 환경 변수(`.env`)를 사용해 백엔드를 구성하고, 로컬에서 테스트할 수 있습니다.
-- GitHub 저장소에 Push(업로드)하고 Netlify Hosting으로 CD(지속적인 배포)를 적용할 수 있습니다.
-- Jest와 VTU(Vue Test Utils)를 활용해 컴포넌트 단위 테스트를 진행할 수 있습니다.
-- Cypress를 활용해 E2E 테스트를 진행할 수 있습니다.
+### 백엔드
+- **Netlify Functions** - API 프록시를 위한 서버리스 함수
+- **Axios** - API 요청을 위한 HTTP 클라이언트
 
-## 💡 Specs
+### 테스팅
+- **Jest** - 단위 테스트 프레임워크
+- **Vue Test Utils** - Vue 공식 테스팅 라이브러리
+- **Cypress** - E2E 테스트 프레임워크
 
-- Vue3
-- Vuex
-- Vue-Router
-- Webpack
-- OMDb API
-- Netlify
-  - Hosting with GitHub(Continuous Deployment)
-  - Functions(Serverless)
-- Axios
-- Lodash
-- Tests
-  - Jest
-  - Vue Test Utils
-  - Cypress
+## 시작하기
 
-## 📦 Packages
+### 사전 요구사항
 
-> 설치할 각 패키지(모듈)의 설치 버전이 예제와 다른 경우 사용법이 달라질 수 있습니다.<br>
-> 모든 패키지를 완성 예제의 [package.json](https://github.com/ParkYoungWoong/vue3-movie-app/blob/master/package.json) 파일에 명시된 버전과 동일하게 설치하는 것을 권장합니다.<br>
-> [유뷰트에서 '강의 예제와 모듈(패키지) 버전 일치시키기' 영상 강의 보기](https://www.youtube.com/watch?v=5L9Ugz9eYxI)
+- Node.js (v14 이상)
+- npm 또는 yarn
+- OMDb API 키 ([OMDb API](http://www.omdbapi.com/apikey.aspx)에서 발급)
 
-- [bootstrap](https://github.com/twbs/bootstrap): 다양하고 강력한 기능을 제공하는 UI 프레임워크입니다.
-- [vuex](https://github.com/vuejs/vuex): Vue.js를 위한 중앙 집중식 상태 관리 라이브러리입니다.
-- [vue-router](https://github.com/vuejs/vue-router-next): Vue.js SPA를 위한 공식 라우터입니다.
-- [axios](https://github.com/axios/axios):  HTTP 클라이언트 라이브러리로, OMDb API를 통해 영화 정보를 요청하기 위해 사용합니다.
-- [lodash](https://github.com/lodash/lodash): 다양한 유틸리티 기능을 제공하는 자바스크립트 라이브러리입니다.
-- [netlify-cli](https://www.npmjs.com/package/netlify-cli): Netlify 명령을 사용해 로컬에서 프로젝트와 서버리스 함수가 통신하기 위해 사용합니다.
-- [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack): Webpack에서 dotenv로 환경 변수를 설정합니다. 
-- [jest](https://github.com/facebook/jest): 페이스북에서 만든 테스트 프레임워크로 VTU(Vue Test Utils)에서 권장하는 테스트 러너(실행 환경)입니다.
-- [@vue/test-utils](https://github.com/vuejs/vue-test-utils-next): Vue.js 환경에서 단위 테스트를 하기 위한 공식(Official) 라이브러리 입니다.
-- [vue-jest](https://github.com/vuejs/vue-test-utils-next): Vue 파일을 Jest가 실행할 수 있는 자바스크립트로 컴파일합니다.
-- [babel-jest](https://github.com/babel/babel-jest): JS 파일을 Jest가 실행할 수 있는 자바스크립트로 컴파일합니다.
-- [cypress](https://github.com/cypress-io/cypress): 브라우저 기반으로 쉽고 빠르게 테스트할 수 있는 프론트엔드 전용 테스트 도구입니다.
-- [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress): Cypress 테스트 환경을 위한 ESLint 플러그인입니다.
+### 설치 방법
 
-### 패키지 설치 주의사항
-
-Vue 3버전에 대응하는 플러그인들과 최신의 부트스트랩 5버전 패키지를 설치하세요!
-
-- `npm i bootstrap@next`
-- `npm i vuex@next`
-- `npm i vue-router@4`
-- `npm i @vue/test-utils@next`
-- `npm i vue-jest@next`
-
-## 🔧 단위 테스트(Unit test)
-
-단위(Unit) 테스트란 데이터(상태), 함수(메소드), 컴포넌트 등의 정의된 프로그램 최소 단위들이 독립적으로 정상 동작하는지 확인하는 것을 말합니다.<br>
-이를 통해 프로그램 전체의 신뢰도를 향상하고 코드 리팩터링(Code refactoring)의 부담을 줄일 수 있습니다.
-
-### 구성
-
-`jest.config.js` 파일을 생성하고 다음과 같이 Jest 구성 옵션을 추가합니다.
-
-```js
-module.exports = {
-  // 파일 확장자를 지정하지 않은 경우, Jest가 검색할 확장자 목록입니다.
-  // 일반적으로 많이 사용되는 모듈의 확장자를 지정합니다.
-  moduleFileExtensions: [
-    'js',
-    'vue'
-  ],
-
-  // `~` 같은 경로 별칭을 매핑합니다.
-  // E.g. `import HelloWorld from '~/components/HelloWorld.vue';`
-  // `<rootDir>` 토큰을 사용해 루트 경로를 참조할 수 있습니다.
-  moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/src/$1'
-  },
-
-  // 일치하는 경로에서는 모듈을 가져오지 않습니다.
-  // `<rootDir>` 토큰을 사용해 루트 경로를 참조할 수 있습니다.
-  modulePathIgnorePatterns: [
-    '<rootDir>/node_modules',
-    '<rootDir>/dist',
-    '<rootDir>/cypress' // For e2e test
-  ],
-
-  // jsdom 환경에 대한 URL을 설정합니다.
-  // https://github.com/facebook/jest/issues/6766
-  testURL: 'http://localhost/',
-
-  // 정규식과 일치하는 파일의 변환 모듈을 지정합니다.
-  transform: {
-    '^.+\\.vue$': 'vue-jest',
-    '^.+\\.js$': 'babel-jest'
-  }
-}
+1. 저장소 클론:
+```bash
+git clone https://github.com/yourusername/movie-app.git
+cd movie-app
 ```
 
-`.eslintrc.js` 파일에 다음과 같이 jest 환경 옵션을 추가합니다.
-
-```js
-module.exports = {
-  env: {
-    browser: true,
-    node: true,
-    jest: true
-  },
-  // ...
-}
+2. 의존성 설치:
+```bash
+npm install
 ```
 
-## 🔧 E2E 테스트(End to End test)
-
-E2E(End to End) 테스트란 애플리케이션의 처음부터 끝까지의 흐름을 테스트하는 방법입니다.<br>
-실제 사용자의 관점에서 테스트를 진행하며, 브라우저, 네트워크, DB 등 실제 환경을 최대한 그대로 활용해 진행합니다.<br>
-사용자 환경과 거의 동일하게 테스트를 진행하기 때문에 실제 상황에서 발생할 수 있는 여러 에러를 사전에 발견할 수 있습니다.
-
-### 폴더 구조
-
-- `fixtures`: 테스트에서 활용될 수 있는 정적 데이터 파일들을 보관합니다.
-- `integration`: 기본적인 테스트 파일들이 위치합니다.
-- `plugins`: 여러 플러그인으로 내부 동작을 활용, 수정 또는 확장할 수 있습니다.
-- `support`: 모든 테스트에 직전에 자동으로 포함되는 사전 지원 코드를 작성할 수 있습니다.
-- `screenshots`: `cy.screenshot()` 명령으로 생성됩니다.
-- `videos`: `cypress run` 스크립트로 생성됩니다.
-
-`cypress.json` 파일에 다음과 같이 구성 옵션을 추가합니다.
-
-```json
-{
-  "baseUrl": "http://localhost:8080",
-  "viewportWidth": 1500,
-  "viewportHeight": 800
-}
+3. 루트 디렉토리에 `.env` 파일 생성:
+```bash
+OMDB_API_KEY=your_api_key_here
 ```
 
-`.eslintrc.js` 파일에 다음과 같이 Cypress 환경 옵션을 추가합니다.
+### 개발 서버 실행
 
-```js
-module.exports = {
-  env: {
-    browser: true,
-    node: true,
-    jest: true,
-    "cypress/globals": true
-  },
-  plugins: [
-    "cypress"
-  ],
-  // ...
-}
+Netlify Functions와 함께 개발 서버 실행:
+```bash
+npm run dev
 ```
 
-## 📚 Refs
+앱은 `http://localhost:8080`에서 실행됩니다.
 
-### HTML Entities in numeric order
+Webpack 개발 서버만 실행 (서버리스 함수 없이):
+```bash
+npm run dev:webpack
+```
 
-http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/
+### 빌드
+
+프로덕션용 빌드:
+```bash
+npm run build
+```
+
+빌드된 파일은 `dist/` 디렉토리에 생성됩니다.
+
+## 테스트
+
+### 단위 테스트
+
+Jest로 단위 테스트 실행:
+```bash
+npm run test:unit
+```
+
+사일런트 모드로 테스트 실행:
+```bash
+npm run test:unit:silent
+```
+
+### E2E 테스트
+
+Cypress 테스트 러너 열기:
+```bash
+npm run test:e2e
+```
+
+헤드리스 모드로 Cypress 테스트 실행:
+```bash
+npm run test:e2e:headless
+```
+
+## 코드 품질
+
+ESLint로 코드 검사 및 수정:
+```bash
+npm run lint
+```
+
+## 프로젝트 구조
+
+```
+movie-app/
+├── src/
+│   ├── components/          # 재사용 가능한 Vue 컴포넌트
+│   │   ├── Header.vue       # 헤더 컴포넌트
+│   │   ├── Footer.vue       # 푸터 컴포넌트
+│   │   ├── Search.vue       # 검색 폼 컴포넌트
+│   │   ├── MovieList.vue    # 영화 목록 컴포넌트
+│   │   ├── MovieItem.vue    # 개별 영화 카드 컴포넌트
+│   │   ├── Headline.vue     # 히어로 섹션 컴포넌트
+│   │   ├── Loader.vue       # 로딩 스피너 컴포넌트
+│   │   └── Logo.vue         # 로고 컴포넌트
+│   ├── routes/              # 페이지 컴포넌트
+│   │   ├── Home.vue         # 검색 페이지
+│   │   ├── Movie.vue        # 영화 상세 페이지
+│   │   ├── About.vue        # 소개 페이지
+│   │   ├── NotFound.vue     # 404 페이지
+│   │   └── index.js         # 라우터 설정
+│   ├── store/               # Vuex 상태 관리
+│   │   ├── index.js         # Store 설정
+│   │   ├── movie.js         # 영화 모듈
+│   │   └── about.js         # 소개 모듈
+│   ├── plugins/             # 커스텀 Vue 플러그인
+│   │   └── loadImage.js     # 이미지 프리로딩 플러그인
+│   ├── scss/                # 글로벌 스타일
+│   │   └── main.scss
+│   ├── assets/              # 정적 자산 (이미지)
+│   ├── App.vue              # 루트 컴포넌트
+│   └── main.js              # 애플리케이션 진입점
+├── functions/               # Netlify 서버리스 함수
+│   └── movie.js             # OMDb API 프록시
+├── tests/                   # 단위 테스트
+│   ├── components/          # 컴포넌트 테스트
+│   ├── routes/              # 라우트 테스트
+│   └── store/               # Store 테스트
+├── cypress/                 # E2E 테스트
+│   ├── integration/         # 통합 테스트 시나리오
+│   ├── support/             # 테스트 유틸리티
+│   └── plugins/             # Cypress 플러그인
+└── static/                  # 공개 정적 파일
+```
+
+## 환경 변수
+
+다음 변수를 포함한 `.env` 파일을 생성하세요:
+
+```env
+OMDB_API_KEY=your_omdb_api_key
+```
+
+Netlify 배포 시에는 Netlify 대시보드에서 환경 변수를 설정하세요.
+
+## 배포
+
+### Netlify
+
+이 프로젝트는 GitHub과 연동된 Netlify 지속적 배포로 구성되어 있습니다.
+
+1. GitHub에 코드 푸시
+2. Netlify에서 저장소 가져오기
+3. Netlify 대시보드에서 환경 변수 설정
+4. 배포!
+
+빌드 설정:
+- **빌드 명령어:** `npm run build`
+- **배포 디렉토리:** `dist`
+- **Functions 디렉토리:** `functions`
+
+## API 연동
+
+이 애플리케이션은 [OMDb API](http://www.omdbapi.com/)를 사용하여 영화 데이터를 가져옵니다. API 키는 환경 변수에 안전하게 저장되며, 노출을 방지하기 위해 Netlify Functions를 통해 접근됩니다.
+
+### API 엔드포인트
+
+`/.netlify/functions/movie`의 서버리스 함수는 두 가지 유형의 요청을 처리합니다:
+
+1. **영화 검색:**
+```javascript
+axios.post('/.netlify/functions/movie', {
+  title: 'Inception',
+  type: 'movie',
+  year: '2010',
+  page: 1
+})
+```
+
+2. **영화 상세 정보:**
+```javascript
+axios.post('/.netlify/functions/movie', {
+  id: 'tt1375666'
+})
+```
+
+## 브라우저 지원
+
+- Chrome (최신)
+- Firefox (최신)
+- Safari (최신)
+- Edge (최신)
+
+## 기여하기
+
+기여는 언제나 환영합니다! Pull Request를 자유롭게 제출해주세요.
+
+## 라이선스
+
+이 프로젝트는 MIT 라이선스로 제공됩니다.
+
+## 감사의 말
+
+- [OMDb API](http://www.omdbapi.com/) - 영화 데이터 제공
+- [Vue.js](https://vuejs.org/) - 훌륭한 프레임워크를 만들어준 팀
+- [Bootstrap](https://getbootstrap.com/) - UI 컴포넌트 제공
+
+## 문의
+
+질문이나 피드백이 있으시면 GitHub에서 이슈를 열어주세요.
